@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: "Helvetica", "Arial", serif;
+            color: #333;
+            background-color: #ccc;
+            margin: 1em 10%;
+        }
+        h1{
+            color: #333;
+            background-color: transparent;
+        }
+        a{
+            color: #c60;
+            background-color: transparent;
+            font-weight: bold;
+            text-decoration: none;
+            
+        }
+        ul{
+            padding: 0;
+        }
+        li{
+            float: left;
+            padding: 1em;
+            list-style: none;
+        }
+        img#placeholder{
+            display: block;
+            clear: both;
+            width: 400px;
+            height: 200px;
+            border: 10px solid grey;
+        }
+    </style>
+    <script type="text/javascript" src="script/showPic.js"></script>
+</head>
+<body>
+    <h1>Snapshots</h1>
+    <ul>
+        <li><a href="images/Desert.png" nodeValue="sdaf" onclick="showPic(this); return false;" title="A desert display"> Desert </a></li>
+        <li><a href="images/Hydrangeas.jpg" onclick="showPic(this); return false;" title="A Hydrangeas display"> Hydrangeas </a></li>
+        <li><a href="images/Jellyfish.png" onclick="showPic(this); return false;" title="A Jellyfish display"> Jellyfish </a></li>
+        <li><a href="images/Koala.jpg" onclick="showPic(this); return false;" title="A Koala display"> Koala </a></li>
+    </ul>
+    <img id="placeholder" src="images/Desert.png" alt="my image gallery">
+    <p id="description"> A desert display</p>
+</body>
+</html>
