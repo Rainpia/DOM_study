@@ -15,6 +15,12 @@ function countBodyChildren(){
     // 1 : element node
     // 2 : attribute node
     // 3 : text node
+
+    // 测试结果表明，childNodes属性找出来的节点其实不包括属性节点，至少web文档不包括
+    const bodyC = body_element.childNodes;
+    for(let i = 0; i<bodyC.length ; i++){
+        console.log(bodyC[i].nodeType === 2 ? bodyC[i] : "");
+    }
 }
 window.onload = countBodyChildren;
 
