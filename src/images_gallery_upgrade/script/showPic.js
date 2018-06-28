@@ -13,11 +13,56 @@ function showPic(whichpic){
             description.firstChild.nodeValue = text;
         }
     }
+
     return true;
 }
 // 打开新窗口函数
 function popUp(winURL){
     window.open(winURL,'popup','width=320,height=480');
+}
+
+function insertAfter(newElement, targetElement){
+    let parent = targetElement.parentNode;
+    if(parent.lastChild === targetElement){
+        parent.appendChild(newElement);
+    }else{
+        parent.insertBefore(newElement,targetElement.nextSibling);
+    }
+}
+
+function preparePlaceholder(){
+    if(!document.createElement) return false;
+    if(!document.createTextNode) return false;
+    if(!document.getElementById) return false;
+    
+    let img = document.createElement('img');
+    img.setAttribute('id','placeholder');
+    img.setAttribute('src','images/Desert.png');
+    img.setAttribute('alt','my image gallery');
+
+    let p = document.createElement('p');
+    p.setAttribute('id','decription');
+
+    let text = document.createTextNode('A desert display');
+
+    p.appendChild(text);
+
+    if(!document.getElementsByTagName) return false;
+    // method 1
+    let bodyE = document.getElementsByTagName('body')[0];
+    bodyE.appendChild(img);
+    bodyE.appendChild(p);
+
+    // method 2
+    const gallery = document.getElementById('imagegallery');
+    if(!gallery) return false;
+    gallery.parentNode.insertBefore(img,gallery);
+    gallery.parentNode.insertBefore(p,gallery);
+
+    // method 2
+    insertAfter(img,gallery);
+    insertAfter(p,img);
+    
 }
 
 // 准备事件函数
@@ -50,4 +95,5 @@ function addLoadEvent(func){
 
 }
 
+addLoadEvent(preparePlaceholder);
 addLoadEvent(prepareGallery);
