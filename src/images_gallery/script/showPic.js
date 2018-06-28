@@ -17,3 +17,7 @@ function countBodyChildren(){
     // 3 : text node
 }
 window.onload = countBodyChildren;
+
+function popUp(winURL){
+    window.open(winURL,'popup','width=320,height=480');
+}

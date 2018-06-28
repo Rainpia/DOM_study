@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Images Gallery</title>
+    <link rel="stylesheet" href="style/layout.css" type="text/css" media="screen">
+    <script type="text/javascript" src="script/showPic.js"></script>
+</head>
+<body>
+    <h1>Snapshots</h1>
+    <ul id="imagegallery">
+        <li><a href="images/Desert.png"  title="A desert display"> Desert </a></li>
+        <li><a href="images/Hydrangeas.jpg"  title="A Hydrangeas display"> Hydrangeas </a></li>
+        <li><a href="images/Jellyfish.png"  title="A Jellyfish display"> Jellyfish </a></li>
+        <li><a href="images/Koala.jpg"  title="A Koala display"> Koala </a></li>
+    </ul>
+    <img id="placeholder" src="images/Desert.png" alt="my image gallery">
+    <p id="description"> A desert display</p>
+
+    <!-- 伪协议 -->
+    <p>伪协议</p>
+    <a href="javascript:popUp('http:/www.example.com/');">example</a> <br>
+    <!-- 内嵌事件处理函数 -->
+    <p>内嵌事件处理函数</p>
+    <a href="#" onclick="popUp('http:/www.example.com/');return false;">example</a> <br>
+    <!-- 平稳退化，就算用户禁用了javascript，链接也能生效 -->
+    <p>平稳退化</p>
+    <a href="http:/www.example.com/" onclick="popUp(this.href);return false;">example</a> <br>
+</body>
+</html>

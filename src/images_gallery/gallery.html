@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Images Gallery</title>
     <style>
         body{
             font-family: "Helvetica", "Arial", serif;
@@ -51,5 +51,15 @@
     </ul>
     <img id="placeholder" src="images/Desert.png" alt="my image gallery">
     <p id="description"> A desert display</p>
+
+    <!-- 伪协议 -->
+    <p>伪协议</p>
+    <a href="javascript:popUp('http:/www.example.com/');">example</a> <br>
+    <!-- 内嵌事件处理函数 -->
+    <p>内嵌事件处理函数</p>
+    <a href="#" onclick="popUp('http:/www.example.com/');return false;">example</a> <br>
+    <!-- 平稳退化，就算用户禁用了javascript，链接也能生效 -->
+    <p>平稳退化</p>
+    <a href="http:/www.example.com/" onclick="popUp(this.href);return false;">example</a> <br>
 </body>
 </html>
