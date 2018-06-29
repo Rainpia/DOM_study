@@ -11,3 +11,4 @@
 
 `src/Ajax` : Ajax编程实例.
 `src/eight_part` :  第八章编程实例.
+`src/animation` :  第十章章编程实例动画.
