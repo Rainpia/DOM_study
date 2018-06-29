@@ -1,5 +1,6 @@
 # DOM_study
 
+`src/common` : 公共函数.
 `src/images_gallery` : DOM 编程艺术第四章实例.
 
 `src/images_gallery_upgrade` : DOM 编程艺术第六,七章对第四章改进的实例.
