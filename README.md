@@ -1,6 +1,7 @@
 # DOM_study
 
 `src/common` : 公共函数.
+
 `src/images_gallery` : DOM 编程艺术第四章实例.
 
 `src/images_gallery_upgrade` : DOM 编程艺术第六,七章对第四章改进的实例.
@@ -11,5 +12,7 @@
 - 动态创建占位图片跟文本，因为这两部分只有在脚本发挥作用的时候才有用
 
 `src/Ajax` : Ajax编程实例.
+
 `src/eight_part` :  第八章编程实例.
+
 `src/animation` :  第十章章编程实例动画.
