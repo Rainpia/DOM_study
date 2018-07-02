@@ -1,4 +1,4 @@
-# DOM_study
+# JavaScript DOM 编程艺术 第二版实例
 
 `src/common` : 公共函数.
 
