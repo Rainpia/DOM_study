@@ -93,3 +93,12 @@ img#placeholder{
     border-width: 0;
     outline-width: 0;
 }
+td{
+    padding: .5em 3em;
+}
+label{
+    display: block;
+}
+fieldset{
+    border: 0;
+}

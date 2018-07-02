@@ -15,12 +15,12 @@ function addLoadEvent(func){
 }
 
 function insertAfter(newElement, targetElement){
-    let parent = targetElement.parentNode;
-    if(parent.lastChild === targetElement){
-        parent.appendChild(newElement);
-    }else{
-        parent.insertBefore(newElement,targetElement.nextSibling);
-    }
+    // let parent = targetElement.parentNode;
+    // if(parent.lastChild === targetElement){
+    //     parent.appendChild(newElement);
+    // }else{
+    //     parent.insertBefore(newElement,targetElement.nextSibling);
+    // }
 }
 
 function addClass(element, value){
@@ -240,9 +240,87 @@ function prepareGallery(){
     }
 }
 
+// contact
+function focusLabels(){
+    if(!document.getElementsByTagName) return false;
+    let labels = document.getElementsByTagName('label');
+    for(let i = 0; i<labels.length ; i++){
+        if(!labels[i].getAttribute('for')) continue;
+        labels[i].onclick = function (){
+            const id = this.getAttribute('for');
+            if(!document.getElementById('id')) return false;
+            let element = document.getElementById(id);
+            element.focus();
+        }
+    }
+}
+
+function resetFields(whichform){
+    if(Modernizr.input.placeholder) return;
+    for(let i = 0; i<whichform.length ; i++){
+        let element = whichform[i];
+        if(element.type === 'submit') continue;
+        let check = element.placeholder || element.getAttribute('placeholder');
+        if(!check) continue;
+        element.onfocus = function(){
+            let text = this.placeholder || this.getAttribute('placeholder');
+            if(this.value === text){
+                this.className = '';
+                this.value = "";
+            }
+        }
+        element.onblur = function(){
+            if(this.value === ''){
+                this.className = 'placeholder';
+                this.value = this.placeholder || this.getAttribute('placeholder');
+            }
+        }
+        element.onblur();
+    }
+}
+
+function isFilled(filed){
+    if(filed.value.replace(' ','').length === 0) return false;
+    const placeholder = filed.placeholder || filed.getAttribute('placeholder');
+    return (filed.value !== placeholder);
+}
+
+function isEmail(filed){
+    return (filed.value.indexOf('@') !== -1 && filed.value.indexOf('.') !== -1);
+}
+
+function validateForm(whichform){
+    for(let i = 0; i<whichform.length ; i++){
+        let element = whichform[i];
+        if(element.required === 'required'){
+            if(isFilled(element)){
+                alert('Please fill in the ' + element.name + 'field.')
+                return false;
+            }
+        }
+        if(element.type === 'email'){
+            if(!isEmail(element)){
+                alert('The ' + element.name + 'field must be a valid email address.')
+                return false;
+            }
+        }
+    }
+}
+
+function prepareForm(){
+    for(let i = 0; i<document.forms.length ; i++){
+        const thisform = document.forms[i];
+        resetFields(thisform);
+        thisform.onsubmit = function(){
+            return validateForm(this);
+        }
+    }
+}
+
 addLoadEvent(highlightPage);
 addLoadEvent(prepareSlideshow);
 addLoadEvent(prepareInternalnav);
 addLoadEvent(preparePlaceholder);
 addLoadEvent(prepareGallery);
+addLoadEvent(prepareForm);
 
